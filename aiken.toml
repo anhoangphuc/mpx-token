@@ -1,10 +1,10 @@
-name = "mpx/mpx-token"
+name = "aiken-lang/mpx-token"
 version = "0.0.0"
 license = "Apache-2.0"
-description = "Aiken contracts for project 'mpx/mpx-token'"
+description = "Aiken contracts for project 'aiken-lang/mpx-token'"
 
 [repository]
-user = "mpx"
+user = "aiken-lang"
 project = "mpx-token"
 platform = "github"
 
