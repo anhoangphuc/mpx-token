@@ -1,0 +1,28 @@
+{
+  "preamble": {
+    "title": "mpx/mpx-token",
+    "description": "Aiken contracts for project 'mpx/mpx-token'",
+    "version": "0.0.0",
+    "plutusVersion": "v2",
+    "license": "Apache-2.0"
+  },
+  "validators": [
+    {
+      "title": "mpx_token.mpx_token",
+      "redeemer": {
+        "title": "_rdmr",
+        "schema": {
+          "$ref": "#/definitions/Data"
+        }
+      },
+      "compiledCode": "4f010000322253330034a22930b2b9a1",
+      "hash": "69eb6e27b7098c51cef74d8929553456e0ff6748c50a08c0daae7986"
+    }
+  ],
+  "definitions": {
+    "Data": {
+      "title": "Data",
+      "description": "Any Plutus data."
+    }
+  }
+}
