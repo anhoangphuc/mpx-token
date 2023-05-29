@@ -14,9 +14,7 @@ const lucid = await Lucid.new(
 
 lucid.selectWalletFromPrivateKey(await Deno.readTextFile("./owner.sk"));
 const ownerAddr = await Deno.readTextFile("./owner.addr");
-const ownerPublishKeyHash = await lucid.utils.getAddressDetails(ownerAddr)
-.paymentCredential?.hash || "";
-const mpxValidators = readMPXValidators(lucid, [ownerPublishKeyHash]);
+const mpxValidators = await readMPXValidators(lucid);
 
 const assetName = `${mpxValidators.mpxPolicyId}${fromText("MPX")}`;
 

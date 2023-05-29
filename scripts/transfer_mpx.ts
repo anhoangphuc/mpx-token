@@ -27,7 +27,7 @@ const flags = parse(Deno.args, {
 
 
 
-const mpxValidators = readMPXValidators(lucid);
+const mpxValidators = await readMPXValidators(lucid);
 
 const assetName = `${mpxValidators.mpxPolicyId}${fromText("MPX")}`;
 const userAddress = await Deno.readTextFile('./owner.addr');
