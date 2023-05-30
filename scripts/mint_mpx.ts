@@ -13,15 +13,18 @@ const lucid = await Lucid.new(
 );
 
 lucid.selectWalletFromPrivateKey(await Deno.readTextFile("./owner.sk"));
-
-const mpxValidators = readMPXValidators(lucid);
+const ownerAddr = await Deno.readTextFile("./owner.addr");
+const beneficiaryAddr = await Deno.readTextFile("./beneficiary.addr");
+const mpxValidators = await readMPXValidators(lucid);
 
 const assetName = `${mpxValidators.mpxPolicyId}${fromText("MPX")}`;
 
 
 const tx = await lucid.newTx()
     .attachMintingPolicy(mpxValidators.mpxPolicy)
-    .mintAssets({ [assetName]: BigInt(10) }, Data.void())
+    .mintAssets({ [assetName]: BigInt(100) }, Data.void())
+    .addSigner(ownerAddr)
+    .payToAddress(beneficiaryAddr, { [assetName]: BigInt(100) })
     .complete();
 
 const txSigned = await tx.sign().complete();

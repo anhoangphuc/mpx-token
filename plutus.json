@@ -1,7 +1,7 @@
 {
   "preamble": {
-    "title": "mpx/mpx-token",
-    "description": "Aiken contracts for project 'mpx/mpx-token'",
+    "title": "aiken-lang/mpx-token",
+    "description": "Aiken contracts for project 'aiken-lang/mpx-token'",
     "version": "0.0.0",
     "plutusVersion": "v2",
     "license": "Apache-2.0"
@@ -15,14 +15,31 @@
           "$ref": "#/definitions/Data"
         }
       },
-      "compiledCode": "4f010000322253330034a22930b2b9a1",
-      "hash": "69eb6e27b7098c51cef74d8929553456e0ff6748c50a08c0daae7986"
+      "parameters": [
+        {
+          "title": "owners",
+          "schema": {
+            "$ref": "#/definitions/List$ByteArray"
+          }
+        }
+      ],
+      "compiledCode": "58e20100003232323232323232322322253330083232533300a3370e90000008991999180080091129998088010a50132325333010300300214a2266600a00a00200660280066eb8c0480080188ccc8c888cc00cdd6198069807801240200026002002444a66602400429404c8c94ccc044cdc78010018a5113330050050010033015003375c602600466012601600a900000098048010a50300a37540026600a600e00290010a4c2c6eb0004cc0040052000222233330063370e0020060144666600a00a66e000112002300c001002002230043754002ae6955ceaab9e5573eae855d11",
+      "hash": "805976657ff93ffec13e3d17f01aa2ee60a74870e44cbd2d844aacc5"
     }
   ],
   "definitions": {
+    "ByteArray": {
+      "dataType": "bytes"
+    },
     "Data": {
       "title": "Data",
       "description": "Any Plutus data."
+    },
+    "List$ByteArray": {
+      "dataType": "list",
+      "items": {
+        "$ref": "#/definitions/ByteArray"
+      }
     }
   }
 }
